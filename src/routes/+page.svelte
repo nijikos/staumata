@@ -122,21 +122,21 @@
 		],
 		projects: [
 			{
-				img: '/images/projects/project-1.webp',
+				img: '/images/projects/project-1_4x.webp',
 				category: 'Automation & AI Solutions',
 				title: 'Lead Profiles Scraper & Cold Message Generation',
 				description:
 					'Effortlessly extract LinkedIn profiles based on your specific lead criteria and automate the creation of high-conversion sales outreach. This system maintains a communication standard by blending data accuracy with human-like personalization.'
 			},
 			{
-				img: '/images/projects/project-2.webp',
+				img: '/images/projects/project-2_4x.webp',
 				category: 'Automation & AI Solutions',
 				title: 'Lead Profiles Scraper & Cold Message Generation',
 				description:
 					"Engineer AI agents that strictly adhere to your company's SOPs while integrating with essential tools like Google Calendar and digital product catalogs, bridging the gap between automated efficiency and personalized service to drive higher conversion rates."
 			},
 			{
-				img: '/images/projects/project-3.webp',
+				img: '/images/projects/project-3_4x.webp',
 				category: 'Automation & AI Solutions',
 				title: 'Strategic Sales Intelligence',
 				description:
@@ -254,7 +254,7 @@
 	</nav>
 
 	<div class="flex items-center justify-center px-4 py-24">
-		<div class="w-full text-primary-800 md:max-w-480">
+		<div class="w-full text-primary-800 md:max-w-320">
 			<div
 				class="flex flex-col items-start gap-0 md:flex-row md:items-end md:gap-6 lg:justify-start"
 			>
@@ -436,7 +436,7 @@
 </main>
 <!-- ---------- FOOTER -->
 <footer
-	class="flex flex-col gap-8 bg-primary-800 px-8 py-14 text-white md:flex-row md:items-start md:justify-between"
+	class="flex flex-col gap-8 bg-primary-900 px-8 py-14 text-white md:flex-row md:items-start md:justify-between"
 >
 	<div class="">
 		<div class="mb-8">
