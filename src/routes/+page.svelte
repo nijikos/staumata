@@ -1,15 +1,19 @@
 <script lang="ts">
 	import {
 		ChartLine,
+		ChartNoAxesColumnIncreasing,
 		ChartNoAxesCombined,
 		HandCoins,
 		Handshake,
 		Mail,
 		Menu,
+		MessageCircle,
 		MoveRight,
 		Package,
 		Puzzle,
+		Quote,
 		ReceiptText,
+		Search,
 		SquareKanban,
 		Warehouse,
 		X
@@ -32,25 +36,25 @@
 	];
 
 	const main = {
-		issues: [
+		problems: [
 			{
-				icon: Package,
 				title: 'GENERIC ERP',
+				icon: Package,
 				description: "You're working on systems that are not built for your workflow"
 			},
 			{
-				icon: Puzzle,
 				title: 'IRRELEVANT MODULES',
+				icon: Puzzle,
 				description: 'Feature-heavy systems with modules you never needed'
 			},
 			{
-				icon: ChartNoAxesCombined,
 				title: 'STACKED EXPENSE',
+				icon: ChartNoAxesCombined,
 				description: 'Too many tools. Too many fees. Fragmented Data.'
 			},
 			{
-				icon: Warehouse,
 				title: 'CRM AS STORAGE',
+				icon: Warehouse,
 				description: 'Your CRM only act as storage, not intelligence.'
 			}
 		],
@@ -78,6 +82,84 @@
 			{
 				title: 'ANALYTICS',
 				icon: ChartLine
+			}
+		],
+		features: [
+			{
+				title: 'OUTBOUND SALES',
+				icon: Search,
+				tagline: 'More conversations. Less manual work.',
+				features: [
+					'3–5x more qualified leads sourced monthly',
+					'40–70% higher reply rates with AI-personalized outreach',
+					'80% reduction in manual prospecting time',
+					'Fully automated lead scraping + enrichment'
+				]
+			},
+			{
+				title: 'INBOUND SALES',
+				icon: MessageCircle,
+				tagline: 'No lead left waiting. No revenue leaking.',
+				features: [
+					'< 60-second automated lead response time',
+					'2–3x higher lead-to-meeting conversion',
+					'24/7 AI sales agents handling inquiries',
+					'Personalized follow-ups across WhatsApp & chat'
+				]
+			},
+			{
+				title: 'PROJECT MANAGEMENT',
+				icon: ChartNoAxesColumnIncreasing,
+				tagline: 'Organized execution. Predictable revenue.',
+				features: [
+					'100% pipeline transparency across deals',
+					'30–50% faster deal cycle tracking',
+					'Automated invoicing & task assignment',
+					'Real-time budget & performance dashboards'
+				]
+			}
+		],
+		projects: [
+			{
+				img: '/images/projects/project-1.webp',
+				category: 'Automation & AI Solutions',
+				title: 'Lead Profiles Scraper & Cold Message Generation',
+				description:
+					'Effortlessly extract LinkedIn profiles based on your specific lead criteria and automate the creation of high-conversion sales outreach. This system maintains a communication standard by blending data accuracy with human-like personalization.'
+			},
+			{
+				img: '/images/projects/project-2.webp',
+				category: 'Automation & AI Solutions',
+				title: 'Lead Profiles Scraper & Cold Message Generation',
+				description:
+					"Engineer AI agents that strictly adhere to your company's SOPs while integrating with essential tools like Google Calendar and digital product catalogs, bridging the gap between automated efficiency and personalized service to drive higher conversion rates."
+			},
+			{
+				img: '/images/projects/project-3.webp',
+				category: 'Automation & AI Solutions',
+				title: 'Strategic Sales Intelligence',
+				description:
+					'Transform your raw sales data into actionable insights with an AI interface that functions as a personal business consultant. This system accelerates the decision-making process by providing data-driven recommendations in real-time.'
+			}
+		],
+		reviews: [
+			{
+				testimonial:
+					'By automating our LinkedIn prospecting and messaging, we saw a 40% increase in lead response rates within the first month. The personalization engine is so accurate and it save us more time to focus on something else.',
+				author: 'Director of Growth',
+				industry: 'FinTech Startup'
+			},
+			{
+				testimonial:
+					"What used to take our analysts days to compile now takes seconds through the AI consultant interface. We've shaved 15 hours off our weekly reporting cycle. Customizing the workflow to display the SQL query also helps us crosschecking the AI's results.",
+				author: 'VP of Sales',
+				industry: 'SaaS Enterprise'
+			},
+			{
+				testimonial:
+					'Integrating the AI Sales Agent with our product catalog was a game-changer, resulting in a 25% reduction in support tickets and faster booking cycles via Google Calendar. It adheres perfectly to our SOPs, and works 27/4.',
+				author: 'Founder',
+				industry: 'Mudita Mental Health'
 			}
 		]
 	};
@@ -170,7 +252,7 @@
 		{/if}
 	</nav>
 
-	<div class="flex items-center justify-center px-4 pt-24 pb-36">
+	<div class="flex items-center justify-center px-4 py-24">
 		<div class="w-full max-w-400">
 			<div
 				class="flex flex-col items-start gap-0 md:flex-row md:items-end md:gap-6 lg:justify-start"
@@ -213,10 +295,144 @@
 		</div>
 	</div>
 </header>
-<main></main>
+<!-- ---------- MAIN -->
+<main>
+	<section class="my-20 flex flex-col gap-4 px-4 text-primary-800">
+		<p class="border-b border-primary-800 pb-4 text-3xl font-semibold uppercase">
+			[common] problem
+		</p>
+		<div class="flex flex-col gap-4 md:flex-row md:flex-wrap">
+			{#each main.problems as problem}
+				<div class="flex flex-row gap-2 border border-muted-400 px-4 py-6">
+					<problem.icon class="size-8 stroke-1" />
+					<div class="">
+						<p class="text-xl font-semibold">{problem.title}</p>
+						<p class="font-medium">{problem.description}</p>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</section>
+
+	<section class="my-20 flex flex-col gap-4 bg-muted-100 px-4 py-8 text-primary-800">
+		<div class="border-b border-primary-800 pb-4">
+			<p class="text-3xl font-semibold uppercase">[from] lead generation</p>
+			<p class="text-3xl font-semibold uppercase">[to] follow-up</p>
+		</div>
+		<div class="flex flex-col gap-2 md:flex-row md:flex-wrap">
+			{#each main.solutions as solution}
+				<div class="flex flex-row items-center gap-2 border border-primary-800 px-6 py-5">
+					<solution.icon class="size-4 stroke-1" />
+					<p class="uppercase">{solution.title}</p>
+				</div>
+			{/each}
+		</div>
+		<p class="text-sm">Giving you more time to focus on building relationships and closing deals</p>
+	</section>
+
+	<section class="my-20 flex flex-col gap-4 px-4 text-primary-800">
+		<div class="border-b border-primary-800 pb-4">
+			<p class="text-3xl font-semibold uppercase">[features]</p>
+			<p class="text-3xl font-semibold uppercase">all-in-one sales command center</p>
+		</div>
+		<p class="text-sm">
+			Growth reveals inefficiencies. Generic systems amplify them. We design sales infrastructure
+			built around your exact workflow, not someone else's template.
+		</p>
+		<div class="flex flex-col gap-8 md:flex-row md:flex-wrap">
+			{#each main.features as features}
+				<div class="flex flex-col gap-4 border border-primary-800 px-4 py-8">
+					<features.icon class="size-6 stroke-2" />
+					<p class="text-2xl font-semibold uppercase">{features.title}</p>
+					<p class="font-semibold">{features.tagline}</p>
+					<ul>
+						{#each features.features as feat}
+							<li class="list-inside list-disc">{feat}</li>
+						{/each}
+					</ul>
+				</div>
+			{/each}
+		</div>
+		<button class="button-md md:button-lg contain-primary w-fit shrink-0">
+			<span>Book A Meeting</span>
+			<MoveRight size={16} />
+		</button>
+	</section>
+
+	<section class="my-20 flex flex-col gap-4 px-4 text-primary-800">
+		<div class="">
+			<p class="text-3xl font-semibold uppercase">[projects]</p>
+			<p class="text-3xl font-semibold uppercase">our featured works</p>
+		</div>
+		<div class="flex flex-col gap-8 md:flex-row md:flex-wrap">
+			{#each main.features as features}
+				<div class="flex flex-col gap-4 border border-primary-800 px-4 py-8">
+					<features.icon class="size-6 stroke-2" />
+					<p class="text-2xl font-semibold uppercase">{features.title}</p>
+					<p class="font-semibold">{features.tagline}</p>
+					<ul>
+						{#each features.features as feat}
+							<li class="list-inside list-disc">{feat}</li>
+						{/each}
+					</ul>
+				</div>
+			{/each}
+		</div>
+		<button class="button-md md:button-lg contain-primary w-fit shrink-0">
+			<span>Book A Meeting</span>
+			<MoveRight size={16} />
+		</button>
+	</section>
+
+	<section class="my-20 flex flex-col gap-4 text-primary-800">
+		<div class="px-4">
+			<p class="text-3xl font-semibold uppercase">[projects]</p>
+			<p class="text-3xl font-semibold uppercase">our featured works</p>
+		</div>
+		<div class="flex flex-col gap-0 md:flex-row md:flex-wrap">
+			{#each main.projects as project}
+				<div class="flex flex-col">
+					<img class="h-40 object-cover" alt="project thumnail" src={project.img} />
+					<div class="flex flex-col gap-4 bg-white px-4 py-5">
+						<p class="w-fit border border-muted-400 px-4 py-3">{project.category}</p>
+						<p class="text-2xl font-semibold uppercase">{project.title}</p>
+						<p class="font-semibold">{project.description}</p>
+						<a href="/" class="link-primary">see more</a>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</section>
+
+	<section class="my-20 flex flex-col gap-4 px-4 text-primary-800">
+		<div class="">
+			<p class="text-3xl font-semibold uppercase">[reviews]</p>
+			<p class="text-3xl font-semibold uppercase">what our clients say</p>
+		</div>
+		<div
+			class="flex flex-col gap-12 border-t border-b border-primary-800 py-10 md:flex-row md:flex-wrap"
+		>
+			{#each main.reviews as review}
+				<div class="flex flex-col gap-4">
+					<div class="flex flex-row gap-2">
+						<p class="flex-1 shrink-0">{review.testimonial}</p>
+						<Quote class="size-12 stroke-[0.5px]" />
+					</div>
+					<p class="w-fit rounded-bl-xl bg-primary-800 px-5 py-3 text-white">
+						{review.author}, {review.industry}
+					</p>
+				</div>
+			{/each}
+		</div>
+		<button class="button-md md:button-lg contain-primary w-fit shrink-0">
+			<span>Book A Meeting</span>
+			<MoveRight size={16} />
+		</button>
+	</section>
+</main>
 <!-- ---------- FOOTER -->
 <footer
-	class="absolute right-0 bottom-0 left-0 flex flex-col gap-8 bg-primary-800 px-8 py-14 text-white md:flex-row md:items-start md:justify-between"
+	class="flex flex-col gap-8 bg-primary-800 px-8 py-14 text-white md:flex-row md:items-start md:justify-between"
 >
 	<div class="">
 		<div class="mb-8">
