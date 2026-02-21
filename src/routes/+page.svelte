@@ -254,7 +254,7 @@
 	</nav>
 
 	<div class="flex items-center justify-center px-4 py-24">
-		<div class="w-full max-w-400">
+		<div class="w-full text-primary-800 md:max-w-480">
 			<div
 				class="flex flex-col items-start gap-0 md:flex-row md:items-end md:gap-6 lg:justify-start"
 			>
@@ -298,7 +298,9 @@
 </header>
 <!-- ---------- MAIN -->
 <main class="">
-	<section class="mx-auto my-20 flex w-full max-w-400 flex-col gap-4 px-4 text-primary-800 md:px-8">
+	<section
+		class="my-20 flex w-full flex-col gap-4 px-4 text-primary-800 md:mx-auto md:max-w-480 md:px-8"
+	>
 		<p
 			class="border-b border-primary-800 pb-4 text-3xl font-semibold uppercase md:w-fit md:text-5xl"
 		>
@@ -320,7 +322,7 @@
 	</section>
 
 	<section class="my-20 bg-muted-100 py-8 text-primary-800">
-		<div class="mx-auto flex w-full max-w-400 flex-col gap-4 px-4 md:px-8">
+		<div class="flex w-full flex-col gap-4 px-4 md:mx-auto md:max-w-480 md:px-8">
 			<div class="border-b border-primary-800 pb-4 md:w-fit">
 				<p class="text-3xl font-semibold uppercase md:text-5xl">[from] lead generation</p>
 				<p class="text-3xl font-semibold uppercase md:text-5xl">[to] follow-up</p>
@@ -339,7 +341,9 @@
 		</div>
 	</section>
 
-	<section class="mx-auto my-20 flex w-full max-w-400 flex-col gap-4 px-4 text-primary-800 md:px-8">
+	<section
+		class="my-20 flex w-full flex-col gap-4 px-4 text-primary-800 md:mx-auto md:max-w-480 md:px-8"
+	>
 		<div class="border-b border-primary-800 pb-4 md:w-fit">
 			<p class="text-3xl font-semibold uppercase md:text-5xl">[features]</p>
 			<p class="text-3xl font-semibold uppercase md:text-5xl">all-in-one sales command center</p>
@@ -372,12 +376,12 @@
 		</button>
 	</section>
 
-	<section class="mx-auto my-20 flex w-full max-w-400 flex-col gap-4 text-primary-800">
-		<div class="px-4">
+	<section class="my-20 flex w-full flex-col gap-4 text-primary-800 md:mx-auto md:max-w-480">
+		<div class="px-4 md:px-8">
 			<p class="text-3xl font-semibold uppercase md:text-5xl">[projects]</p>
 			<p class="text-3xl font-semibold uppercase md:text-5xl">our featured works</p>
 		</div>
-		<div class=" flex flex-col gap-0 md:px-4">
+		<div class=" flex flex-col gap-0">
 			{#each main.projects as project, i}
 				<div class={`flex flex-col md:grid md:grid-cols-2 md:items-stretch`}>
 					<img
@@ -390,12 +394,12 @@
 					/>
 					<div
 						class={cn(
-							'flex flex-col gap-4 bg-white px-4 py-5 md:col-span-1',
+							'flex flex-col gap-4 bg-white px-4 py-5 md:col-span-1 md:px-8 md:py-9',
 							i % 2 === 0 ? 'md:order-1' : 'md:order-2'
 						)}
 					>
 						<p class="w-fit border border-muted-400 px-4 py-3">{project.category}</p>
-						<p class="text-2xl font-semibold uppercase">{project.title}</p>
+						<p class="text-2xl font-semibold uppercase md:text-3xl">{project.title}</p>
 						<p class="font-semibold">{project.description}</p>
 						<a href="/" class="link-primary">see more</a>
 					</div>
@@ -404,7 +408,9 @@
 		</div>
 	</section>
 
-	<section class="mx-auto my-20 flex w-full max-w-400 flex-col gap-4 px-4 text-primary-800">
+	<section
+		class="my-20 flex w-full flex-col gap-4 px-4 text-primary-800 md:mx-auto md:max-w-480 md:px-8"
+	>
 		<div class="">
 			<p class="text-3xl font-semibold uppercase md:text-5xl">[reviews]</p>
 			<p class="text-3xl font-semibold uppercase md:text-5xl">what our clients say</p>
@@ -430,7 +436,7 @@
 </main>
 <!-- ---------- FOOTER -->
 <footer
-	class="flex flex-col gap-8 bg-primary-800 px-8 py-14 text-white md:flex-row md:items-start md:justify-between md:px-16"
+	class="flex flex-col gap-8 bg-primary-800 px-8 py-14 text-white md:flex-row md:items-start md:justify-between"
 >
 	<div class="">
 		<div class="mb-8">
