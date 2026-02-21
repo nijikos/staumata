@@ -1,0 +1,54 @@
+div,
+main,
+aside,
+section,
+textarea {
+	/* Firefox */
+	scrollbar-width: thin;
+	scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+
+	/* WebKit (Chrome, Edge, Safari) */
+	&::-webkit-scrollbar {
+		width: 6px; // vertical
+		height: 6px; // horizontal
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba(0, 0, 0, 0.3);
+		border-radius: 999px;
+		border: none;
+	}
+
+	&::-webkit-scrollbar-button {
+		display: none;
+		width: 0;
+		height: 0;
+	}
+
+	&::-webkit-scrollbar-corner {
+		background: transparent;
+	}
+
+	&::-webkit-resizer {
+		display: none;
+	}
+}
+
+@layer components {
+	.no-scrollbar {
+		/* Allow scrolling */
+		overflow: auto;
+
+		/* Hide scrollbar for Webkit (Chrome, Safari, Edge) */
+		scrollbar-width: none !important; /* Firefox */
+		-ms-overflow-style: none !important; /* IE and Edge */
+	}
+
+	.no-scrollbar::-webkit-scrollbar {
+		display: none !important; /* Chrome, Safari, Opera */
+	}
+}

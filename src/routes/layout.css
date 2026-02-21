@@ -1,0 +1,180 @@
+@import 'tailwindcss';
+
+@font-face {
+	font-family: 'Roboto Condensed';
+	src:
+		url('/fonts/roboto-condensed/RobotoCondensed-VariableFont_wght.ttf') format('truetype'),
+		url('/fonts/roboto-condensed/RobotoCondensed-Italic-VariableFont_wght.ttf') format('truetype');
+	font-weight: 100 900; /* variable font range */
+	font-style: normal italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src:
+		url('/fonts/roboto/Roboto-VariableFont_wdth,wght.ttf') format('truetype'),
+		url('/fonts/roboto/Roboto-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: normal italic;
+	font-display: swap;
+}
+
+@theme {
+	--color-primary-50: #f9fdf3;
+	--color-primary-100: #e7f3d5;
+	--color-primary-200: #d2e2bc;
+	--color-primary-300: #b6cc98;
+	--color-primary-400: #9fb87c;
+	--color-primary-500: #7a9857;
+	--color-primary-600: #678048;
+	--color-primary-700: #476230;
+	--color-primary-800: #3a4933;
+	--color-primary-900: #28321d;
+	--color-primary-950: #151a0e;
+	--color-muted-50: #f7f8f4;
+	--color-muted-100: #e6e8dd;
+	--color-muted-200: #ccd0bb;
+	--color-muted-300: #b0b59f;
+	--color-muted-400: #909881;
+	--color-muted-500: #7f866a;
+	--color-muted-600: #666b55;
+	--color-muted-700: #4f5342;
+	--color-muted-800: #393c30;
+	--color-muted-900: #25261f;
+	--color-muted-950: #141510;
+
+	--text-2xs: 0.625rem;
+
+	--shadow-drop: 0px 4px 3px -3px rgba(0, 0, 0, 0.1);
+
+	--font-roboto-condensed: 'Roboto Condensed', sans-serif;
+	--font-roboto: 'Roboto', sans-serif;
+
+	--breakpoint-xs: 30rem;
+	--breakpoint-2xl: 100rem;
+	--breakpoint-3xl: 120rem;
+}
+
+@layer base {
+	html,
+	body {
+		font-family: var(--font-roboto-condensed);
+		background-color: var(--color-muted-50);
+	}
+
+	button,
+	span,
+	p,
+	label,
+	input,
+	textarea,
+	select,
+	option,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: inherit;
+		font-weight: 200;
+	}
+	* {
+		/* Change the focus ring color */
+		@apply transition-all focus:ring-0 focus:outline-primary-400 focus:outline-none;
+	}
+	button,
+	a {
+		@apply cursor-pointer;
+	}
+	label {
+		@apply select-none;
+	}
+	input {
+		@apply w-full! border-none! bg-transparent! p-0! ring-0 outline-0 placeholder:font-light! placeholder:text-slate-400! focus:border-none! focus:ring-0! focus:outline-none! disabled:cursor-not-allowed disabled:opacity-60;
+	}
+	textarea {
+		@apply w-full resize-none border-none! bg-transparent focus:border-0! focus:ring-0! focus:outline-none! disabled:cursor-not-allowed disabled:bg-slate-200 disabled:opacity-60;
+	}
+
+	/* Chrome, Edge, Safari */
+	input[type='number']::-webkit-outer-spin-button,
+	input[type='number']::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Firefox */
+	input[type='number'] {
+		appearance: textfield;
+		-moz-appearance: textfield;
+	}
+}
+
+@layer components {
+	.bound {
+		@apply border border-dashed border-red-500;
+	}
+	.bound-orange {
+		@apply border border-dashed border-amber-500;
+	}
+	.bound-blue {
+		@apply border border-dashed border-blue-500;
+	}
+	.bound-green {
+		@apply border border-dashed border-green-500;
+	}
+	.bound-pink {
+		@apply border border-dashed border-rose-300;
+	}
+	.bound-purple {
+		@apply border border-dashed border-purple-300;
+	}
+
+	.as-button {
+		@apply cursor-pointer transition-all hover:scale-[1.01] hover:shadow-drop active:scale-[0.99];
+	}
+
+	.button-md {
+		@apply flex flex-row items-center justify-center gap-2 px-4 py-3 text-base transition-all disabled:cursor-not-allowed disabled:opacity-60;
+	}
+	.button-md:focus {
+		@apply ring-2 ring-sky-500;
+	}
+	.button-lg {
+		@apply flex flex-row items-center justify-center gap-2 px-12 py-5 text-base transition-all disabled:cursor-not-allowed disabled:opacity-60;
+	}
+
+	.button-round {
+		@apply flex flex-row items-center justify-center rounded-full px-2 py-2 transition-all disabled:cursor-not-allowed disabled:opacity-60;
+	}
+
+	.contain-primary {
+		@apply bg-primary-800 text-white hover:bg-primary-900 disabled:hover:bg-primary-800;
+	}
+
+	.outline-primary {
+		@apply border border-primary-800 text-primary-800 hover:bg-primary-100;
+	}
+
+	.contain-success {
+		@apply bg-lime-600 text-white hover:bg-lime-700 disabled:hover:bg-lime-600;
+	}
+
+	.link-primary {
+		@apply rounded-none border-b border-primary-900/0 text-primary-900 hover:border-primary-900;
+	}
+
+	.outline-success {
+		@apply border border-lime-500 text-lime-600 hover:bg-lime-50;
+	}
+	.contain-error {
+		@apply bg-red-600 text-white hover:bg-red-700 disabled:hover:bg-red-600;
+	}
+
+	.outline-error {
+		@apply border border-red-500 text-red-600 hover:bg-red-50;
+	}
+}
