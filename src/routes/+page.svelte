@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { cn } from '$lib/utils/core.helper';
 	import {
 		ChartLine,
 		ChartNoAxesColumnIncreasing,
@@ -296,17 +297,21 @@
 	</div>
 </header>
 <!-- ---------- MAIN -->
-<main>
-	<section class="my-20 flex flex-col gap-4 px-4 text-primary-800">
-		<p class="border-b border-primary-800 pb-4 text-3xl font-semibold uppercase">
+<main class="">
+	<section class="mx-auto my-20 flex w-full max-w-400 flex-col gap-4 px-4 text-primary-800 md:px-8">
+		<p
+			class="border-b border-primary-800 pb-4 text-3xl font-semibold uppercase md:w-fit md:text-5xl"
+		>
 			[common] problem
 		</p>
 		<div class="flex flex-col gap-4 md:flex-row md:flex-wrap">
 			{#each main.problems as problem}
-				<div class="flex flex-row gap-2 border border-muted-400 px-4 py-6">
+				<div
+					class="flex flex-row gap-2 border border-muted-400 px-4 py-6 md:w-60 md:flex-col md:gap-18"
+				>
 					<problem.icon class="size-8 stroke-1" />
 					<div class="">
-						<p class="text-xl font-semibold">{problem.title}</p>
+						<p class="text-xl font-semibold md:w-36 md:text-3xl">{problem.title}</p>
 						<p class="font-medium">{problem.description}</p>
 					</div>
 				</div>
@@ -314,40 +319,48 @@
 		</div>
 	</section>
 
-	<section class="my-20 flex flex-col gap-4 bg-muted-100 px-4 py-8 text-primary-800">
-		<div class="border-b border-primary-800 pb-4">
-			<p class="text-3xl font-semibold uppercase">[from] lead generation</p>
-			<p class="text-3xl font-semibold uppercase">[to] follow-up</p>
+	<section class="my-20 bg-muted-100 py-8 text-primary-800">
+		<div class="mx-auto flex w-full max-w-400 flex-col gap-4 px-4 md:px-8">
+			<div class="border-b border-primary-800 pb-4 md:w-fit">
+				<p class="text-3xl font-semibold uppercase md:text-5xl">[from] lead generation</p>
+				<p class="text-3xl font-semibold uppercase md:text-5xl">[to] follow-up</p>
+			</div>
+			<div class="flex flex-col gap-2 md:flex-row md:flex-wrap">
+				{#each main.solutions as solution}
+					<div class="flex flex-row items-center gap-2 border border-primary-800 px-6 py-5">
+						<solution.icon class="size-4 stroke-1" />
+						<p class="uppercase">{solution.title}</p>
+					</div>
+				{/each}
+			</div>
+			<p class="text-sm md:text-base">
+				Giving you more time to focus on building relationships and closing deals
+			</p>
 		</div>
-		<div class="flex flex-col gap-2 md:flex-row md:flex-wrap">
-			{#each main.solutions as solution}
-				<div class="flex flex-row items-center gap-2 border border-primary-800 px-6 py-5">
-					<solution.icon class="size-4 stroke-1" />
-					<p class="uppercase">{solution.title}</p>
-				</div>
-			{/each}
-		</div>
-		<p class="text-sm">Giving you more time to focus on building relationships and closing deals</p>
 	</section>
 
-	<section class="my-20 flex flex-col gap-4 px-4 text-primary-800">
-		<div class="border-b border-primary-800 pb-4">
-			<p class="text-3xl font-semibold uppercase">[features]</p>
-			<p class="text-3xl font-semibold uppercase">all-in-one sales command center</p>
+	<section class="mx-auto my-20 flex w-full max-w-400 flex-col gap-4 px-4 text-primary-800 md:px-8">
+		<div class="border-b border-primary-800 pb-4 md:w-fit">
+			<p class="text-3xl font-semibold uppercase md:text-5xl">[features]</p>
+			<p class="text-3xl font-semibold uppercase md:text-5xl">all-in-one sales command center</p>
 		</div>
-		<p class="text-sm">
-			Growth reveals inefficiencies. Generic systems amplify them. We design sales infrastructure
-			built around your exact workflow, not someone else's template.
-		</p>
+		<div>
+			<p class="text-sm md:text-base">Growth reveals inefficiencies.</p>
+			<p class="text-sm md:text-base">Generic systems amplify them.</p>
+			<p class="text-sm md:text-base">
+				We design sales infrastructure built around your exact workflow, not someone else's
+				template.
+			</p>
+		</div>
 		<div class="flex flex-col gap-8 md:flex-row md:flex-wrap">
 			{#each main.features as features}
-				<div class="flex flex-col gap-4 border border-primary-800 px-4 py-8">
+				<div class="flex flex-col gap-4 border border-primary-800 px-4 py-8 md:w-90">
 					<features.icon class="size-6 stroke-2" />
-					<p class="text-2xl font-semibold uppercase">{features.title}</p>
+					<p class="text-2xl font-semibold uppercase md:w-48 md:text-5xl">{features.title}</p>
 					<p class="font-semibold">{features.tagline}</p>
 					<ul>
 						{#each features.features as feat}
-							<li class="list-inside list-disc">{feat}</li>
+							<li class="2ist-outside ml-8 list-disc pl-3">{feat}</li>
 						{/each}
 					</ul>
 				</div>
@@ -359,41 +372,28 @@
 		</button>
 	</section>
 
-	<section class="my-20 flex flex-col gap-4 px-4 text-primary-800">
-		<div class="">
-			<p class="text-3xl font-semibold uppercase">[projects]</p>
-			<p class="text-3xl font-semibold uppercase">our featured works</p>
-		</div>
-		<div class="flex flex-col gap-8 md:flex-row md:flex-wrap">
-			{#each main.features as features}
-				<div class="flex flex-col gap-4 border border-primary-800 px-4 py-8">
-					<features.icon class="size-6 stroke-2" />
-					<p class="text-2xl font-semibold uppercase">{features.title}</p>
-					<p class="font-semibold">{features.tagline}</p>
-					<ul>
-						{#each features.features as feat}
-							<li class="list-inside list-disc">{feat}</li>
-						{/each}
-					</ul>
-				</div>
-			{/each}
-		</div>
-		<button class="button-md md:button-lg contain-primary w-fit shrink-0">
-			<span>Book A Meeting</span>
-			<MoveRight size={16} />
-		</button>
-	</section>
-
-	<section class="my-20 flex flex-col gap-4 text-primary-800">
+	<section class="mx-auto my-20 flex w-full max-w-400 flex-col gap-4 text-primary-800">
 		<div class="px-4">
-			<p class="text-3xl font-semibold uppercase">[projects]</p>
-			<p class="text-3xl font-semibold uppercase">our featured works</p>
+			<p class="text-3xl font-semibold uppercase md:text-5xl">[projects]</p>
+			<p class="text-3xl font-semibold uppercase md:text-5xl">our featured works</p>
 		</div>
-		<div class="flex flex-col gap-0 md:flex-row md:flex-wrap">
-			{#each main.projects as project}
-				<div class="flex flex-col">
-					<img class="h-40 object-cover" alt="project thumnail" src={project.img} />
-					<div class="flex flex-col gap-4 bg-white px-4 py-5">
+		<div class=" flex flex-col gap-0 md:px-4">
+			{#each main.projects as project, i}
+				<div class={`flex flex-col md:grid md:grid-cols-2 md:items-stretch`}>
+					<img
+						class={cn(
+							'h-40 object-cover md:col-span-1 md:h-auto md:w-full',
+							i % 2 === 0 ? 'md:order-2' : 'md:order-1'
+						)}
+						alt="project thumnail"
+						src={project.img}
+					/>
+					<div
+						class={cn(
+							'flex flex-col gap-4 bg-white px-4 py-5 md:col-span-1',
+							i % 2 === 0 ? 'md:order-1' : 'md:order-2'
+						)}
+					>
 						<p class="w-fit border border-muted-400 px-4 py-3">{project.category}</p>
 						<p class="text-2xl font-semibold uppercase">{project.title}</p>
 						<p class="font-semibold">{project.description}</p>
@@ -404,14 +404,12 @@
 		</div>
 	</section>
 
-	<section class="my-20 flex flex-col gap-4 px-4 text-primary-800">
+	<section class="mx-auto my-20 flex w-full max-w-400 flex-col gap-4 px-4 text-primary-800">
 		<div class="">
-			<p class="text-3xl font-semibold uppercase">[reviews]</p>
-			<p class="text-3xl font-semibold uppercase">what our clients say</p>
+			<p class="text-3xl font-semibold uppercase md:text-5xl">[reviews]</p>
+			<p class="text-3xl font-semibold uppercase md:text-5xl">what our clients say</p>
 		</div>
-		<div
-			class="flex flex-col gap-12 border-t border-b border-primary-800 py-10 md:flex-row md:flex-wrap"
-		>
+		<div class="flex flex-col gap-12 border-t border-b border-primary-800 py-10 md:flex-row">
 			{#each main.reviews as review}
 				<div class="flex flex-col gap-4">
 					<div class="flex flex-row gap-2">
@@ -432,7 +430,7 @@
 </main>
 <!-- ---------- FOOTER -->
 <footer
-	class="flex flex-col gap-8 bg-primary-800 px-8 py-14 text-white md:flex-row md:items-start md:justify-between"
+	class="flex flex-col gap-8 bg-primary-800 px-8 py-14 text-white md:flex-row md:items-start md:justify-between md:px-16"
 >
 	<div class="">
 		<div class="mb-8">
