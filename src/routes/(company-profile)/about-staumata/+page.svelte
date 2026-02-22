@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Footer from '$lib/components/company-profile/Footer.svelte';
 	import HeaderNavigation from '$lib/components/company-profile/HeaderNavigation.svelte';
 	import {
 		Component,
@@ -299,3 +300,6 @@
 		</button>
 	</section>
 </main>
+
+<!-- ---------- FOOTER -->
+<Footer />
