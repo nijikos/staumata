@@ -97,10 +97,22 @@
 			}
 		],
 		philosophies: [
-			'The name “Stomata” comes from biology: microscopic pores on a leaf that regulate input and output.',
-			'They allow carbon dioxide to enter. They release oxygen. They control exchange with precision.',
-			'We apply the same principle to business systems: Data flows in. Intelligence is processed. Actionable output is generated.',
-			'Controlled exchange. Structured execution.'
+			[
+				'The name “Stomata” comes from biology:',
+				'microscopic pores on a leaf that regulate input and output.'
+			],
+			[
+				'They allow carbon dioxide to enter.',
+				'They release oxygen.',
+				'They control exchange with precision.'
+			],
+			[
+				'We apply the same principle to business systems:',
+				'Data flows in.',
+				'Intelligence is processed. ',
+				'Actionable output is generated.'
+			],
+			['Controlled exchange. Structured execution.']
 		],
 		next: [
 			{
@@ -239,13 +251,22 @@
 		</div>
 	</section>
 
-	<div class="my-20 w-full bg-muted-100 py-8 md:py-16">
+	<div class="relative my-20 w-full overflow-hidden bg-muted-100 py-8 md:py-16">
+		<img
+			src="/images/logo/staumata-logo-icon-bg.webp"
+			alt="logo-icon-bg"
+			class="pointer-events-none absolute -top-32 -right-36 w-120 max-w-none sm:-top-48 sm:w-min sm:max-w-full lg:-top-80 lg:-right-60"
+		/>
 		<section id="philosophies" class="grid grid-cols-1 md:mx-auto md:max-w-480 md:grid-cols-5">
 			<div class="col-span-1 flex flex-col gap-4 px-4 md:col-span-3 md:px-8">
 				<h2 class="section-header w-full text-right">pholosophies</h2>
 				<div class="flex flex-col items-end gap-4">
 					{#each main.philosophies as phil}
-						<p class="text-right md:max-w-120">{phil}</p>
+						<div class="">
+							{#each phil as p}
+								<p class="text-right">{p}</p>
+							{/each}
+						</div>
 					{/each}
 				</div>
 			</div>
