@@ -154,7 +154,7 @@
 			<p class="">What is</p>
 			<p class="font-semibold">STAUMATA</p>
 		</div>
-		<div class="col-span-1 flex flex-col gap-4 px-4 md:col-span-3 md:px-8">
+		<div class="col-span-1 flex flex-col gap-4 px-4 md:col-span-3 md:px-8 md:py-16">
 			<h2 class="section-header">about us</h2>
 			<p class="md:max-w-160">
 				Stomata is an end-to-end sales infrastructure powered by human-supervised AI.
