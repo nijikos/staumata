@@ -1,4 +1,5 @@
 <script lang="ts">
+	import HeaderNavigation from '$lib/components/company-profile/HeaderNavigation.svelte';
 	import { cn } from '$lib/utils/core.helper';
 	import {
 		ChartLine,
@@ -7,7 +8,6 @@
 		HandCoins,
 		Handshake,
 		Mail,
-		Menu,
 		MessageCircle,
 		MoveRight,
 		Package,
@@ -16,25 +16,8 @@
 		ReceiptText,
 		Search,
 		SquareKanban,
-		Warehouse,
-		X
+		Warehouse
 	} from '@lucide/svelte';
-	import { slide, fade } from 'svelte/transition';
-
-	let openMenu = $state(false);
-
-	const toggleMenu = () => {
-		openMenu = !openMenu;
-	};
-	const closeMenu = () => {
-		openMenu = false;
-	};
-
-	const navMenus = [
-		{ label: 'features', href: '/' },
-		{ label: 'projects', href: '/' },
-		{ label: 'products', href: '/' }
-	];
 
 	const main = {
 		problems: [
@@ -183,76 +166,7 @@
 
 <!-- ---------- HERO -->
 <header class="text-primary-900">
-	<img
-		src="/images/logo/staumata-logo-icon-bg.webp"
-		alt="logo-icon-bg"
-		class="pointer-events-none absolute -top-32 -left-48 w-120 max-w-none sm:-top-48 sm:-left-48 sm:w-min sm:max-w-full lg:-top-80 lg:-left-80"
-		class:hidden={openMenu}
-	/>
-	<nav class="flex h-16 flex-row items-center justify-between gap-4 pl-4 md:pl-0">
-		<div class="hidden flex-row gap-0 md:flex">
-			{#each navMenus as menu}
-				<a class="inline-flex items-center px-6 py-5 hover:bg-muted-100" href={menu.href}
-					>{menu.label}</a
-				>
-			{/each}
-		</div>
-		<div>
-			<a href="/"
-				><img src="/images/logo/staumata-logo.webp" alt="logo-icon-bg" class="w-24 md:w-36" /></a
-			>
-		</div>
-		<div class="hidden flex-row gap-0 md:flex">
-			<a
-				class="inline-flex items-center bg-primary-800 px-4 py-3 text-sm text-white hover:bg-primary-900 md:px-6 md:py-5 md:text-base"
-				href="/">learn more</a
-			>
-			<a
-				class="inline-flex items-center px-4 py-3 text-sm hover:bg-muted-100 md:px-6 md:py-5 md:text-base"
-				href="/">request demo</a
-			>
-		</div>
-
-		<!-- ========== MOBILE VIEW BUTTON -->
-		<button
-			class="grid h-full w-16 place-items-center hover:bg-muted-100 md:hidden"
-			onclick={toggleMenu}
-		>
-			{#if openMenu}
-				<X size={20} />
-			{:else}
-				<Menu size={20} />
-			{/if}
-		</button>
-
-		<!-- ========== MOBILE MENU -->
-		{#if openMenu}
-			<div
-				class="fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col bg-muted-50 text-sm sm:text-lg md:hidden"
-				in:slide={{ duration: 500 }}
-				out:slide={{ duration: 300 }}
-			>
-				<div class="flex flex-1 flex-col">
-					{#each navMenus as menu}
-						<a
-							class="px-6 py-5 hover:bg-muted-100 active:bg-muted-100"
-							href={menu.href}
-							onclick={closeMenu}
-						>
-							{menu.label}
-						</a>
-					{/each}
-				</div>
-				<div class="flex flex-row gap-0 pb-4">
-					<a class="flex-1 shrink-0 bg-primary-800 px-6 py-4 text-center text-white" href="/">
-						Learn More
-					</a>
-					<a class="flex-1 shrink-0 px-6 py-4 text-center" href="/"> Request Demo </a>
-				</div>
-			</div>
-		{/if}
-	</nav>
-
+	<HeaderNavigation />
 	<div class="flex items-center justify-center px-4 py-24">
 		<div class="w-full text-primary-800 md:max-w-400">
 			<div
@@ -290,7 +204,7 @@
 				</p>
 				<button class="button-md md:button-lg contain-primary shrink-0">
 					<span>Book A Meeting</span>
-					<MoveRight size={16} />
+					<MoveRight class="size-4 stroke-1" />
 				</button>
 			</div>
 		</div>
@@ -301,11 +215,7 @@
 	<section
 		class="my-20 flex w-full flex-col gap-4 px-4 text-primary-800 md:mx-auto md:max-w-480 md:px-8"
 	>
-		<p
-			class="border-b border-primary-800 pb-4 text-3xl font-semibold uppercase md:w-fit md:text-5xl"
-		>
-			[common] problems
-		</p>
+		<p class="section-header border-b border-primary-800 pb-4">[common] problems</p>
 		<div class="flex flex-col gap-4 md:flex-row md:flex-wrap">
 			{#each main.problems as problem}
 				<div
@@ -321,11 +231,11 @@
 		</div>
 	</section>
 
-	<section class="my-20 bg-muted-100 py-8 text-primary-800">
+	<section class="my-20 bg-muted-100 py-8 text-primary-800 md:py-16">
 		<div class="flex w-full flex-col gap-4 px-4 md:mx-auto md:max-w-480 md:px-8">
 			<div class="border-b border-primary-800 pb-4 md:w-fit">
-				<p class="text-3xl font-semibold uppercase md:text-5xl">[from] lead generation</p>
-				<p class="text-3xl font-semibold uppercase md:text-5xl">[to] follow-up</p>
+				<p class="section-header">[from] lead generation</p>
+				<p class="section-header">[to] follow-up</p>
 			</div>
 			<div class="flex flex-col gap-2 md:flex-row md:flex-wrap">
 				{#each main.solutions as solution}
@@ -345,8 +255,8 @@
 		class="my-20 flex w-full flex-col gap-4 px-4 text-primary-800 md:mx-auto md:max-w-480 md:px-8"
 	>
 		<div class="border-b border-primary-800 pb-4 md:w-fit">
-			<p class="text-3xl font-semibold uppercase md:text-5xl">[features]</p>
-			<p class="text-3xl font-semibold uppercase md:text-5xl">all-in-one sales command center</p>
+			<p class="section-header">[features]</p>
+			<p class="section-header">all-in-one sales command center</p>
 		</div>
 		<div>
 			<p class="text-sm md:text-base">Growth reveals inefficiencies.</p>
@@ -372,14 +282,14 @@
 		</div>
 		<button class="button-md md:button-lg contain-primary w-fit shrink-0">
 			<span>Book A Meeting</span>
-			<MoveRight size={16} />
+			<MoveRight class="size-4 stroke-1" />
 		</button>
 	</section>
 
 	<section class="my-20 flex w-full flex-col gap-4 text-primary-800 md:mx-auto md:max-w-480">
 		<div class="px-4 md:px-8">
-			<p class="text-3xl font-semibold uppercase md:text-5xl">[projects]</p>
-			<p class="text-3xl font-semibold uppercase md:text-5xl">our featured works</p>
+			<p class="section-header">[projects]</p>
+			<p class="section-header">our featured works</p>
 		</div>
 		<div class=" flex flex-col gap-0">
 			{#each main.projects as project, i}
@@ -412,8 +322,8 @@
 		class="my-20 flex w-full flex-col gap-4 px-4 text-primary-800 md:mx-auto md:max-w-480 md:px-8"
 	>
 		<div class="">
-			<p class="text-3xl font-semibold uppercase md:text-5xl">[reviews]</p>
-			<p class="text-3xl font-semibold uppercase md:text-5xl">what our clients say</p>
+			<p class="section-header">[reviews]</p>
+			<p class="section-header">what our clients say</p>
 		</div>
 		<div class="flex flex-col gap-12 border-t border-b border-primary-800 py-10 md:flex-row">
 			{#each main.reviews as review}
@@ -430,7 +340,7 @@
 		</div>
 		<button class="button-md md:button-lg contain-primary w-fit shrink-0">
 			<span>Book A Meeting</span>
-			<MoveRight size={16} />
+			<MoveRight class="size-4 stroke-1" />
 		</button>
 	</section>
 </main>

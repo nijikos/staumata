@@ -180,4 +180,9 @@
 	.outline-error {
 		@apply border border-red-500 text-red-600 hover:bg-red-50;
 	}
+
+	/* ----------- BUAT LANDING PAGE COMPANY PROFILE */
+	.section-header {
+		@apply text-3xl font-semibold uppercase md:w-fit md:text-5xl;
+	}
 }
