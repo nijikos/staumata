@@ -122,21 +122,21 @@
 		],
 		projects: [
 			{
-				img: '/images/projects/project-1_4x.webp',
+				img: '/images/projects/project-1b.webp',
 				category: 'Automation & AI Solutions',
 				title: 'Lead Profiles Scraper & Cold Message Generation',
 				description:
 					'Effortlessly extract LinkedIn profiles based on your specific lead criteria and automate the creation of high-conversion sales outreach. This system maintains a communication standard by blending data accuracy with human-like personalization.'
 			},
 			{
-				img: '/images/projects/project-2_4x.webp',
+				img: '/images/projects/project-2b.webp',
 				category: 'Automation & AI Solutions',
 				title: 'Lead Profiles Scraper & Cold Message Generation',
 				description:
 					"Engineer AI agents that strictly adhere to your company's SOPs while integrating with essential tools like Google Calendar and digital product catalogs, bridging the gap between automated efficiency and personalized service to drive higher conversion rates."
 			},
 			{
-				img: '/images/projects/project-3_4x.webp',
+				img: '/images/projects/project-3b.webp',
 				category: 'Automation & AI Solutions',
 				title: 'Strategic Sales Intelligence',
 				description:
@@ -254,9 +254,9 @@
 	</nav>
 
 	<div class="flex items-center justify-center px-4 py-24">
-		<div class="w-full text-primary-800 md:max-w-320">
+		<div class=" w-full text-primary-800 md:max-w-7xl">
 			<div
-				class="flex flex-col items-start gap-0 md:flex-row md:items-end md:gap-6 lg:justify-start"
+				class="pointer-events-none flex flex-col items-start gap-0 select-none md:flex-row md:items-end md:gap-6 lg:justify-start"
 			>
 				<h2
 					class="text-5xl leading-12 font-semibold uppercase md:text-6xl md:leading-16 lg:text-8xl lg:leading-28 2xl:text-9xl"
@@ -269,7 +269,7 @@
 			</div>
 
 			<div
-				class="flex flex-col-reverse items-start justify-end gap-0 md:flex-row md:items-center md:gap-6"
+				class="pointer-events-none flex flex-col-reverse items-start justify-end gap-0 select-none md:flex-row md:items-center md:gap-6"
 			>
 				<div class="text-xs lg:text-base">
 					<p class="text-left md:text-right">Most teams don't lack effort.</p>
@@ -285,7 +285,7 @@
 			</div>
 
 			<div class="mt-4 flex flex-row items-end justify-end gap-4 md:mt-0">
-				<p class="w-40 text-right text-xs lg:text-base">
+				<p class="pointer-events-none w-40 text-right text-xs select-none lg:text-base">
 					No more chasing leads. Start closing deals.
 				</p>
 				<button class="button-md md:button-lg contain-primary shrink-0">
@@ -304,7 +304,7 @@
 		<p
 			class="border-b border-primary-800 pb-4 text-3xl font-semibold uppercase md:w-fit md:text-5xl"
 		>
-			[common] problem
+			[common] problems
 		</p>
 		<div class="flex flex-col gap-4 md:flex-row md:flex-wrap">
 			{#each main.problems as problem}
