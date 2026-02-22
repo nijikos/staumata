@@ -131,13 +131,13 @@
 			{
 				img: '/images/projects/project-2b.webp',
 				category: 'Automation & AI Solutions',
-				title: 'Lead Profiles Scraper & Cold Message Generation',
+				title: 'Custom Sales and Support AI Agents',
 				description:
 					"Engineer AI agents that strictly adhere to your company's SOPs while integrating with essential tools like Google Calendar and digital product catalogs, bridging the gap between automated efficiency and personalized service to drive higher conversion rates."
 			},
 			{
 				img: '/images/projects/project-3b.webp',
-				category: 'Automation & AI Solutions',
+				category: 'Data & Business Intelligence',
 				title: 'Strategic Sales Intelligence',
 				description:
 					'Transform your raw sales data into actionable insights with an AI interface that functions as a personal business consultant. This system accelerates the decision-making process by providing data-driven recommendations in real-time.'
@@ -254,12 +254,12 @@
 	</nav>
 
 	<div class="flex items-center justify-center px-4 py-24">
-		<div class=" w-full text-primary-800 md:max-w-7xl">
+		<div class="w-full text-primary-800 md:max-w-400">
 			<div
 				class="pointer-events-none flex flex-col items-start gap-0 select-none md:flex-row md:items-end md:gap-6 lg:justify-start"
 			>
 				<h2
-					class="text-5xl leading-12 font-semibold uppercase md:text-6xl md:leading-16 lg:text-8xl lg:leading-28 2xl:text-9xl"
+					class="text-6xl leading-12 font-semibold uppercase md:text-6xl md:leading-16 lg:text-9xl lg:leading-28 xl:leading-32 2xl:text-10xl"
 				>
 					end-to-end sales
 				</h2>
@@ -278,7 +278,7 @@
 					</p>
 				</div>
 				<h2
-					class="text-right text-5xl leading-12 font-semibold uppercase md:text-6xl md:leading-16 lg:text-8xl lg:leading-28 2xl:text-9xl"
+					class="text-right text-6xl leading-12 font-semibold uppercase md:text-6xl md:leading-16 lg:text-9xl lg:leading-28 xl:leading-32 2xl:text-10xl"
 				>
 					driven by ai
 				</h2>
@@ -400,7 +400,7 @@
 					>
 						<p class="w-fit border border-muted-400 px-4 py-3">{project.category}</p>
 						<p class="text-2xl font-semibold uppercase md:text-3xl">{project.title}</p>
-						<p class="font-semibold">{project.description}</p>
+						<p class="font-light">{project.description}</p>
 						<a href="/" class="link-primary">see more</a>
 					</div>
 				</div>
