@@ -135,6 +135,26 @@
 					'Centralize documentation, make knowledge discoverable with semantic search and AI summarization, and embed that knowledge directly into team workflows and collaboration tools'
 				]
 			}
+		],
+		teams: [
+			{
+				name: 'hiz rotanza',
+				role: 'product, automation builder',
+				img: '/images/portraits/portrait-hiz.jpeg',
+				link: '/team/hiz'
+			},
+			{
+				name: 'nijiko suryadikara',
+				role: 'uiux, frontend',
+				img: '/images/portraits/portrait-nijiko.jpeg',
+				link: '/team/nijiko'
+			},
+			{
+				name: 'pryamm',
+				role: 'backend, devops',
+				img: '/images/portraits/portrait-hiz.jpeg',
+				link: '/pryamm'
+			}
 		]
 	};
 </script>
@@ -299,7 +319,34 @@
 		</p>
 	</section>
 
-	<section id="the-team" class="my-20"></section>
+	<section
+		id="the-team"
+		class="my-20 flex flex-col justify-center gap-4 lg:flex-row lg:items-start lg:gap-8"
+	>
+		<p class="flex flex-row items-center justify-center gap-2 lg:flex-col lg:items-end lg:gap-0">
+			<span class="">Meet the</span>
+			<span class="font-semibold uppercase">staumata</span>
+			<span class="">team</span>
+		</p>
+		{#each main.teams as member}
+			<div class="mx-auto flex flex-col items-start gap-8 lg:mx-0">
+				<a href={member.link} target="_blank" class="group relative w-fit">
+					<img
+						src={member.img}
+						alt="team-member-portrait"
+						class="relative z-1 h-80 w-60 object-cover object-center group-hover:-translate-y-2"
+					/>
+					<div
+						class="absolute -right-4 -bottom-4 z-0 h-80 w-60 border border-primary-800 bg-white"
+					></div>
+				</a>
+				<div class="">
+					<p class="font-semibold uppercase">{member.name}</p>
+					<p class="uppercase">[{member.role}]</p>
+				</div>
+			</div>
+		{/each}
+	</section>
 
 	<section
 		id="work-with-us"

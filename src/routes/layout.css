@@ -114,6 +114,10 @@
 		appearance: textfield;
 		-moz-appearance: textfield;
 	}
+
+	img {
+		@apply pointer-events-none select-none;
+	}
 }
 
 @layer components {
