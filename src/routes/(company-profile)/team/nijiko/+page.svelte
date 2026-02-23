@@ -201,10 +201,14 @@
 						<img src={`/images/logo/external/${link.type}.png`} alt="social-icons" />
 					</a>
 				{/each}
-				<button class="button-md md:button-lg contain-primary w-fit shrink-0">
+				<a
+					href={data.connectHref}
+					target="_blank"
+					class="button-md md:button-lg contain-primary w-fit shrink-0"
+				>
 					<span>Let's Connect</span>
 					<MoveRight class="size-4 stroke-1" />
-				</button>
+				</a>
 			</div>
 		</div>
 		<div class="flex flex-col-reverse items-end gap-2 px-4 lg:flex-row lg:gap-6 lg:px-0">
@@ -246,9 +250,6 @@
 					</div>
 				{/each}
 			</div>
-			<p class="text-sm md:text-base">
-				Giving you more time to focus on building relationships and closing deals
-			</p>
 		</div>
 	</section>
 
@@ -316,10 +317,14 @@
 	</section>
 
 	<section class="my-20 grid place-content-center">
-		<button class="button-md md:button-lg contain-primary w-fit shrink-0">
+		<a
+			href={data.connectHref}
+			target="_blank"
+			class="button-md md:button-lg contain-primary w-fit shrink-0"
+		>
 			<span>Let's Connect</span>
 			<MoveRight class="size-4 stroke-1" />
-		</button>
+		</a>
 	</section>
 </main>
 <!-- ---------- FOOTER -->

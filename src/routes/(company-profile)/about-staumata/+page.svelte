@@ -153,7 +153,7 @@
 				name: 'pryamm',
 				role: 'backend, devops',
 				img: '/images/portraits/portrait-hiz.jpeg',
-				link: '/pryamm'
+				link: '/team/pryamm'
 			}
 		]
 	};
