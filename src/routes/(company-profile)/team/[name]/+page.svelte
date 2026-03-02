@@ -169,5 +169,3 @@
 		</a>
 	</section>
 </main>
-<!-- ---------- FOOTER -->
-<Footer />

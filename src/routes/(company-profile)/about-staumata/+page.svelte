@@ -360,5 +360,3 @@
 	</section>
 </main>
 
-<!-- ---------- FOOTER -->
-<Footer />

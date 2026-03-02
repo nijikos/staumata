@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import Footer from '$lib/components/company-profile/Footer.svelte';
 	import HeaderNavigation from '$lib/components/company-profile/HeaderNavigation.svelte';
 
 	let { children } = $props();
@@ -23,3 +24,5 @@
 </header>
 
 {@render children?.()}
+
+<Footer />
