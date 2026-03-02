@@ -4,9 +4,10 @@
 
 	type Props = {
 		hideIconBG?: boolean;
+		isLanding?: boolean;
 	};
 
-	const { hideIconBG }: Props = $props();
+	const { hideIconBG, isLanding }: Props = $props();
 
 	let openMenu = $state(false);
 
@@ -17,11 +18,10 @@
 		openMenu = false;
 	};
 
-	const navMenus = [
-		{ label: 'features', href: '/' },
-		{ label: 'projects', href: '/' },
-		{ label: 'products', href: '/' }
-	];
+	const navMenus = $derived([
+		{ label: 'features', href: isLanding ? '#features' : '/#features' },
+		{ label: 'products', href: isLanding ? '#products' : '/#products' }
+	]);
 </script>
 
 <img

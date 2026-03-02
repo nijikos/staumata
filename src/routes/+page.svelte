@@ -185,7 +185,7 @@
 
 <!-- ---------- HERO -->
 <header class="text-primary-900">
-	<HeaderNavigation />
+	<HeaderNavigation isLanding={true} />
 	<div class="flex items-center justify-center px-4 py-24">
 		<div
 			class="w-full text-primary-800 md:max-w-400"
@@ -237,7 +237,7 @@
 	<section
 		class="my-20 flex w-full flex-col gap-4 px-4 text-primary-800 md:mx-auto md:max-w-480 md:px-8"
 	>
-		<p class="section-header border-b border-primary-800 pb-4">[common] problems</p>
+		<p class="section-header border-b border-primary-800 pb-4">your [common] problems</p>
 		<div class="flex flex-col gap-4 md:flex-row md:flex-wrap">
 			{#each main.problems as problem, index}
 				<div
@@ -282,6 +282,7 @@
 	</section>
 
 	<section
+		id="features"
 		class="my-20 flex w-full flex-col gap-4 px-4 text-primary-800 md:mx-auto md:max-w-480 md:px-8"
 	>
 		<div class="border-b border-primary-800 pb-4 md:w-fit">
@@ -321,7 +322,10 @@
 		</button>
 	</section>
 
-	<section class="my-20 flex w-full flex-col gap-4 text-primary-800 md:mx-auto md:max-w-480">
+	<section
+		id="products"
+		class="my-20 flex w-full flex-col gap-4 text-primary-800 md:mx-auto md:max-w-480"
+	>
 		<div class="px-4 md:px-8">
 			<p class="section-header">[products]</p>
 			<p class="section-header">our featured works</p>
