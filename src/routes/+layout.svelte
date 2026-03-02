@@ -2,8 +2,14 @@
 	import './layout.css';
 	import '$lib/styles/scrollbar.scss';
 	import favicon from '$lib/assets/favicon.ico';
+	import { onMount } from 'svelte';
+	import Aos from 'aos';
 
 	let { children } = $props();
+
+	onMount(() => {
+		Aos.init();
+	});
 </script>
 
 <svelte:head>

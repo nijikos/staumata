@@ -19,8 +19,6 @@
 		SquareKanban,
 		Warehouse
 	} from '@lucide/svelte';
-	import Aos from 'aos';
-	import { onMount } from 'svelte';
 	import { cubicInOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
 
@@ -110,25 +108,28 @@
 		],
 		products: [
 			{
-				img: '/images/products/product-1b.webp',
+				img: '/images/products/product-1c.webp',
 				category: 'Automation & AI Solutions',
 				title: 'Lead Profiles Scraper & Cold Message Generation',
 				description:
-					'Effortlessly extract LinkedIn profiles based on your specific lead criteria and automate the creation of high-conversion sales outreach. This system maintains a communication standard by blending data accuracy with human-like personalization.'
+					'Effortlessly extract LinkedIn profiles based on your specific lead criteria and automate the creation of high-conversion sales outreach. This system maintains a communication standard by blending data accuracy with human-like personalization.',
+				href: '/product/lead-generator'
 			},
 			{
 				img: '/images/products/product-2b.webp',
 				category: 'Automation & AI Solutions',
 				title: 'Custom Sales and Support AI Agents',
 				description:
-					"Engineer AI agents that strictly adhere to your company's SOPs while integrating with essential tools like Google Calendar and digital product catalogs, bridging the gap between automated efficiency and personalized service to drive higher conversion rates."
+					"Engineer AI agents that strictly adhere to your company's SOPs while integrating with essential tools like Google Calendar and digital product catalogs, bridging the gap between automated efficiency and personalized service to drive higher conversion rates.",
+				href: '/product/lead-generator'
 			},
 			{
 				img: '/images/products/product-3b.webp',
 				category: 'Data & Business Intelligence',
 				title: 'Strategic Sales Intelligence',
 				description:
-					'Transform your raw sales data into actionable insights with an AI interface that functions as a personal business consultant. This system accelerates the decision-making process by providing data-driven recommendations in real-time.'
+					'Transform your raw sales data into actionable insights with an AI interface that functions as a personal business consultant. This system accelerates the decision-making process by providing data-driven recommendations in real-time.',
+				href: '/product/lead-generator'
 			}
 		],
 		reviews: [
@@ -152,10 +153,6 @@
 			}
 		]
 	};
-
-	onMount(() => {
-		Aos.init();
-	});
 
 	let container: HTMLDivElement;
 	let image: HTMLImageElement;
@@ -358,7 +355,7 @@
 						<p class="w-fit border border-muted-400 px-4 py-3">{product.category}</p>
 						<p class="text-2xl font-semibold uppercase md:text-3xl">{product.title}</p>
 						<p class="font-light">{product.description}</p>
-						<a href="/" class="link-primary">see more</a>
+						<a href={product.href} class="link-primary">see more</a>
 					</div>
 				</div>
 			{/each}
