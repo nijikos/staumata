@@ -156,6 +156,34 @@
 	onMount(() => {
 		Aos.init();
 	});
+
+	let container: HTMLDivElement;
+	let image: HTMLImageElement;
+
+	const intensity = 40; // how strong the movement is
+
+	function handleMove(e: MouseEvent) {
+		const container = e.currentTarget as HTMLDivElement;
+		const image = container.querySelector('img') as HTMLImageElement;
+
+		const rect = container.getBoundingClientRect();
+
+		const x = (e.clientX - rect.left) / rect.width;
+		const y = (e.clientY - rect.top) / rect.height;
+
+		const moveX = (0.5 - x) * intensity;
+		const moveY = (0.5 - y) * intensity;
+
+		image.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+		image.style.transition = 'transform 0.1s ease-out';
+	}
+
+	function handleLeave(e: MouseEvent) {
+		const container = e.currentTarget as HTMLDivElement;
+		const image = container.querySelector('img') as HTMLImageElement;
+
+		image.style.transform = `translate(0px, 0px) scale(1)`;
+	}
 </script>
 
 <!-- ---------- HERO -->
@@ -304,18 +332,24 @@
 		<div class=" flex flex-col gap-0">
 			{#each main.projects as project, i}
 				<div class={`flex flex-col md:grid md:grid-cols-2 md:items-stretch`}>
-					<img
+					<div
+						aria-hidden="true"
 						class={cn(
-							'h-40 object-cover md:col-span-1 md:h-auto md:w-full',
+							'relative h-40 overflow-hidden md:h-auto md:w-full',
 							i % 2 === 0 ? 'md:order-2' : 'md:order-1'
 						)}
-						alt="project thumnail"
-						src={project.img}
-					/>
+						onmousemove={handleMove}
+						onmouseleave={handleLeave}
+						bind:this={container}
+					>
+						<img
+							bind:this={image}
+							alt="project thumnail"
+							src={project.img}
+							class="h-full w-full object-cover"
+						/>
+					</div>
 					<div
-						data-aos="fade-up"
-						data-aos-duration={500}
-						data-aos-easing="ease-out-cubic"
 						class={cn(
 							'flex flex-col gap-4 bg-white px-4 py-5 md:col-span-1 md:px-8 md:py-9',
 							i % 2 === 0 ? 'md:order-1' : 'md:order-2'
