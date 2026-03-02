@@ -159,15 +159,6 @@
 	};
 </script>
 
-<header class="text-primary-900">
-	<HeaderNavigation hideIconBG={true} />
-	<img
-		src="/images/headers/abstract-glass-6.webp"
-		alt="about-header"
-		class="my-10 h-auto w-screen object-cover object-bottom xl:h-120"
-	/>
-</header>
-
 <main class="text-primary-800">
 	<section id="about-us" class="mb-20 grid grid-cols-1 md:mx-auto md:max-w-480 md:grid-cols-5">
 		<div class="hidden place-content-center md:col-span-2 md:grid">
