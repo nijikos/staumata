@@ -48,6 +48,8 @@
 	},
 	"dependencies": {
 		"@lucide/svelte": "^0.574.0",
+		"@skeletonlabs/skeleton": "^4.12.1",
+		"@skeletonlabs/skeleton-svelte": "^4.12.1",
 		"@types/aos": "^3.0.7",
 		"aos": "^2.3.4",
 		"as": "^0.4.1",
