@@ -19,6 +19,10 @@
 		SquareKanban,
 		Warehouse
 	} from '@lucide/svelte';
+	import Aos from 'aos';
+	import { onMount } from 'svelte';
+	import { cubicInOut } from 'svelte/easing';
+	import { fly } from 'svelte/transition';
 
 	const main = {
 		problems: [
@@ -148,13 +152,20 @@
 			}
 		]
 	};
+
+	onMount(() => {
+		Aos.init();
+	});
 </script>
 
 <!-- ---------- HERO -->
 <header class="text-primary-900">
 	<HeaderNavigation />
 	<div class="flex items-center justify-center px-4 py-24">
-		<div class="w-full text-primary-800 md:max-w-400">
+		<div
+			class="w-full text-primary-800 md:max-w-400"
+			in:fly|global={{ y: 20, duration: 800, delay: 300, easing: cubicInOut }}
+		>
 			<div
 				class="pointer-events-none flex flex-col items-start gap-0 select-none md:flex-row md:items-end md:gap-6 lg:justify-start"
 			>
@@ -203,8 +214,11 @@
 	>
 		<p class="section-header border-b border-primary-800 pb-4">[common] problems</p>
 		<div class="flex flex-col gap-4 md:flex-row md:flex-wrap">
-			{#each main.problems as problem}
+			{#each main.problems as problem, index}
 				<div
+					data-aos="fade-up"
+					data-aos-duration={(index + 1) * 300}
+					data-aos-easing="ease-out-cubic"
 					class="flex flex-row gap-2 border border-muted-400 px-4 py-6 md:w-60 md:flex-col md:gap-18"
 				>
 					<problem.icon class="size-8 stroke-1" />
@@ -224,8 +238,13 @@
 				<p class="section-header">[to] follow-up</p>
 			</div>
 			<div class="flex flex-col gap-2 md:flex-row md:flex-wrap">
-				{#each main.solutions as solution}
-					<div class="flex flex-row items-center gap-2 border border-primary-800 px-6 py-5">
+				{#each main.solutions as solution, index}
+					<div
+						data-aos="fade-up"
+						data-aos-duration={(index + 1) * 300}
+						data-aos-easing="ease-out-cubic"
+						class="flex flex-row items-center gap-2 border border-primary-800 px-6 py-5"
+					>
 						<solution.icon class="size-4 stroke-1" />
 						<p class="uppercase">{solution.title}</p>
 					</div>
@@ -253,8 +272,13 @@
 			</p>
 		</div>
 		<div class="flex flex-col gap-8 md:flex-row md:flex-wrap">
-			{#each main.features as features}
-				<div class="flex flex-col gap-4 border border-primary-800 px-4 py-8 md:w-90">
+			{#each main.features as features, index}
+				<div
+					data-aos="fade-up"
+					data-aos-duration={(index + 1) * 300}
+					data-aos-easing="ease-out-cubic"
+					class="flex flex-col gap-4 border border-primary-800 px-4 py-8 md:w-90"
+				>
 					<features.icon class="size-6 stroke-2" />
 					<p class="text-2xl font-semibold uppercase md:w-48 md:text-5xl">{features.title}</p>
 					<p class="font-semibold">{features.tagline}</p>
@@ -289,6 +313,9 @@
 						src={project.img}
 					/>
 					<div
+						data-aos="fade-up"
+						data-aos-duration={500}
+						data-aos-easing="ease-out-cubic"
 						class={cn(
 							'flex flex-col gap-4 bg-white px-4 py-5 md:col-span-1 md:px-8 md:py-9',
 							i % 2 === 0 ? 'md:order-1' : 'md:order-2'
@@ -312,8 +339,13 @@
 			<p class="section-header">what our clients say</p>
 		</div>
 		<div class="flex flex-col gap-12 border-t border-b border-primary-800 py-10 md:flex-row">
-			{#each main.reviews as review}
-				<div class="flex flex-col gap-4">
+			{#each main.reviews as review, index}
+				<div
+					data-aos="fade-up"
+					data-aos-duration={(index + 1) * 300}
+					data-aos-easing="ease-out-cubic"
+					class="flex flex-col gap-4"
+				>
 					<div class="flex flex-row gap-2">
 						<p class="flex-1 shrink-0">{review.testimonial}</p>
 						<Quote class="size-12 stroke-[0.5px]" />
