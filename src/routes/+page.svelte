@@ -108,23 +108,23 @@
 				]
 			}
 		],
-		projects: [
+		products: [
 			{
-				img: '/images/projects/project-1b.webp',
+				img: '/images/products/product-1b.webp',
 				category: 'Automation & AI Solutions',
 				title: 'Lead Profiles Scraper & Cold Message Generation',
 				description:
 					'Effortlessly extract LinkedIn profiles based on your specific lead criteria and automate the creation of high-conversion sales outreach. This system maintains a communication standard by blending data accuracy with human-like personalization.'
 			},
 			{
-				img: '/images/projects/project-2b.webp',
+				img: '/images/products/product-2b.webp',
 				category: 'Automation & AI Solutions',
 				title: 'Custom Sales and Support AI Agents',
 				description:
 					"Engineer AI agents that strictly adhere to your company's SOPs while integrating with essential tools like Google Calendar and digital product catalogs, bridging the gap between automated efficiency and personalized service to drive higher conversion rates."
 			},
 			{
-				img: '/images/projects/project-3b.webp',
+				img: '/images/products/product-3b.webp',
 				category: 'Data & Business Intelligence',
 				title: 'Strategic Sales Intelligence',
 				description:
@@ -326,11 +326,11 @@
 
 	<section class="my-20 flex w-full flex-col gap-4 text-primary-800 md:mx-auto md:max-w-480">
 		<div class="px-4 md:px-8">
-			<p class="section-header">[projects]</p>
+			<p class="section-header">[products]</p>
 			<p class="section-header">our featured works</p>
 		</div>
 		<div class=" flex flex-col gap-0">
-			{#each main.projects as project, i}
+			{#each main.products as product, i}
 				<div class={`flex flex-col md:grid md:grid-cols-2 md:items-stretch`}>
 					<div
 						aria-hidden="true"
@@ -344,8 +344,8 @@
 					>
 						<img
 							bind:this={image}
-							alt="project thumnail"
-							src={project.img}
+							alt="product thumnail"
+							src={product.img}
 							class="h-full w-full object-cover"
 						/>
 					</div>
@@ -355,9 +355,9 @@
 							i % 2 === 0 ? 'md:order-1' : 'md:order-2'
 						)}
 					>
-						<p class="w-fit border border-muted-400 px-4 py-3">{project.category}</p>
-						<p class="text-2xl font-semibold uppercase md:text-3xl">{project.title}</p>
-						<p class="font-light">{project.description}</p>
+						<p class="w-fit border border-muted-400 px-4 py-3">{product.category}</p>
+						<p class="text-2xl font-semibold uppercase md:text-3xl">{product.title}</p>
+						<p class="font-light">{product.description}</p>
 						<a href="/" class="link-primary">see more</a>
 					</div>
 				</div>
