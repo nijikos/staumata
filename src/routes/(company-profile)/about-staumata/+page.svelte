@@ -1,6 +1,4 @@
 <script lang="ts">
-	import Footer from '$lib/components/company-profile/Footer.svelte';
-	import HeaderNavigation from '$lib/components/company-profile/HeaderNavigation.svelte';
 	import {
 		Component,
 		ListTodo,
@@ -310,7 +308,7 @@
 		</p>
 	</section>
 
-	<section
+	<!-- <section
 		id="the-team"
 		class="my-20 flex flex-col justify-center gap-4 lg:flex-row lg:items-start lg:gap-8"
 	>
@@ -337,7 +335,7 @@
 				</div>
 			</div>
 		{/each}
-	</section>
+	</section> -->
 
 	<section
 		id="work-with-us"
@@ -359,4 +357,3 @@
 		</button>
 	</section>
 </main>
-
